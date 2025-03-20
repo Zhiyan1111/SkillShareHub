@@ -3,20 +3,20 @@ var user = document.getElementById("user");
 var pwd = document.getElementById("pwd");
 var message = document.getElementById("login_message")
 
-//记住密码
-//将function函数赋值给onload对象
+//Remember password
+// Assign the function to the onload object.
 window.onload = function ()
 {
-    //从Cookie获取到用户名
+    //Getting a username from a cookie
     var username = getCookie("This is username") ;
-    //如果用户名为空,则给表单元素赋空值
+    //If the username is null, assign a null value to the form element.
     if ( username == "" )
     {
         user.value="" ;
         pwd.value="" ;
         remenber_pwd.checked = false ;
     }
-    //获取对应的密码,并把用户名,密码赋值给表单
+    //Get the corresponding password, and assign the username and password to the form.
     else
     {
         var password = getCookie(username) ;
@@ -48,7 +48,7 @@ function setCookie(name,value)
     exp.setTime(exp.getTime() + Days*24*60*60*1000);
     document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
-//登陆
+//Login
 function login() {
     var username = user.value;
     var password = pwd.value;
@@ -56,7 +56,7 @@ function login() {
     if(!username || !password){ //拦截空内容
         msg("block","red","用户名或密码为空");
     }else{
-        //请求操作
+        //Request operation
         if(username == "admin" && password == "admin" ){
             msg("block","green","登陆成功，1s后自动跳转...");
             //若复选框勾选,则添加Cookie,记录密码
@@ -65,7 +65,7 @@ function login() {
                 setCookie ( "This is username", username, 7 ) ;
                 setCookie ( username, password, 7 ) ;
             }
-            //否则清除Cookie
+            //Otherwise clear cookies
             else
             {
                 delCookie ( "This is username" ) ;
@@ -81,7 +81,7 @@ function login() {
 
 
 }
-//提示信息
+//Alerts message
 function msg(show,color,txt) {
     message.style.display = show;
     message.style.background = color;

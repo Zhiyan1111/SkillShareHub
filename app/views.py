@@ -108,7 +108,7 @@ def my_comment(request):
         print(c_user_id)
 
         Comment.objects.create(c_content=c_content,c_course_id=c_course_id,c_userputong_id=c_user_id,c_username=c_username)
-        print("评论成功")
+
     return redirect(f"/course_detail/{c_course_id}/")
 
 
