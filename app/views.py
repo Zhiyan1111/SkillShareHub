@@ -295,15 +295,15 @@ def edit_course(request,id):
     if request.method == "POST":
         title = request.POST.get('title')
         introduce = request.POST.get('introduce')
-        cover_url = request.POST.get('cover_url')
-        video_url = request.POST.get('video_url')
+        # cover_url = request.POST.get('cover_url')
+        # video_url = request.POST.get('video_url')
         category = request.POST.get('category')
         chapter = request.POST.get('chapter')
 
         obj.title = title
         obj.introduce = introduce
-        obj.cover_url = cover_url
-        obj.video_url = video_url
+        # obj.cover_url = cover_url
+        # obj.video_url = video_url
         obj.category = category
         obj.chapter = chapter
 
