@@ -1,0 +1,63 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillShare Hub</title>
+    <link rel="icon" href="{% static 'images/loginIcon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body style="background-image: url('{% static 'images/1.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;">
+{#    <div id="box" style="background: url({% static 'images/1.jpg' %})"></div>#}
+    <div class="login">
+        <div class="login_title">SkillShare Hub</div>
+        <div class="login_container">
+            <div class="login_titles">User login system</div>
+            <div class="login_message">
+                <div id="login_message">Reminder information</div>
+            </div>
+
+            <form action="/login_user/" method="post">
+                 <div class="login_user">
+                <img src="{% static 'images/user.png' %}">
+                <input id="name" type="text" name="name" placeholder="enter one user name">
+            </div>
+            <div class="login_pwd login_user">
+                <img src="{% static 'images/pwd.png' %}">
+                <input id="password" type="text" name="password" placeholder="Please input a password">
+            </div>
+            <h3 style="color:red;">{{msg}}</h3>
+
+            <div class="login_submit">
+
+                <button>login</button>
+
+            </div>
+
+            </form>
+            <div class="reg">
+                <a href="/reg_user/"><button>reg</button></a>
+            </div>
+
+            <div class="reg">
+                <a href="/login_teacher/"><button> Switch to teacher_login </button></a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'js/login.css' %}"></script>
+</html>
+<style>
+body {
+    background-image: url("{% static 'images/study.png' %}");/* Make sure the background image path is correct */
+    background-size: cover;  /* Make the image fill the entire page */
+    background-position: center;  /* Center the image */
+    background-attachment: fixed; /* The background is fixed and does not scroll with the page */
+    background-repeat: no-repeat; /* Prevent image duplication */
+}</style>

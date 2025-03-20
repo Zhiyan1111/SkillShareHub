@@ -1,0 +1,72 @@
+
+/*三、main的css*/
+/*3.1 banner的css*/
+.banner{
+    width: 1200px;
+    height: 430px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*-------------------------------------------------*/
+/*以下是js的banner轮播图css*/
+
+.banner ul{
+    width: 1200px;
+    height: 430px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    z-index: 1;
+}
+.banner .leftBtn{
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    border-radius: 45px;
+    background-color: rgba(239, 239, 239, 0.3);
+    position: relative;
+    left: 10px;
+    top: 50%;
+    display: inline-block;
+    z-index: 99;
+}
+.banner .leftBtn:hover{
+    background-color: rgba(239, 239, 239, 0.8);
+}
+
+.banner .rightBtn{
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    border-radius: 45px;
+    background-color: rgba(239, 239, 239, 0.3);
+    position: relative;
+    left: 1060px;
+    top: 50%;
+    display: inline-block;
+    z-index: 99;
+}
+.banner .rightBtn:hover{
+    background-color: rgba(239, 239, 239, 0.8);
+}
+
+.banner .leftBtn img{
+    margin: 10px 16px;
+    padding: 0;
+}
+.banner .rightBtn img{
+    margin: 10px 16px;
+    padding: 0;
+}
+.banner ul li{
+    display: none;
+}
+.banner ul .cur{
+    display: block;
+}
+

@@ -1,0 +1,109 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SkillShare Hub</title>
+    <!--    <script type="text/javascript" src="{% static 'js/jj.js' %}"></script>-->
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
+    <!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"-->
+    <!--            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"-->
+    <!--            crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap.js' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_lunbo.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/left-side-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="{% static 'js/jquery.slimscroll.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/left-side-menu.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lunbo_style.css' %}">
+
+</head>
+<body>
+<div class="top" style="width: 100%;height: 80px;background-color: #2ECC71;text-align:center;line-height:80px;">
+     <img src="{% static 'images/logo-removebg.png' %}"
+         alt="SSH Logo"
+         style="height: 50px; margin-right: 15px; position: relative; top: -10px;">
+    <span style="font-size: 36px; color: #FFFFFF;">SkillShare Hub</span>
+</div>
+<div class="left-side-menu" style="width:200px;float:left;background-color: #F5F5F5">
+    <div class="lsm-container">
+        <div>
+            <div class="lsm-sidebar">
+                <ul>
+                    <li class="lsm-sidebar-item">
+                        <a href="javascript:;"><i
+                                class="my-icon lsm-sidebar-icon icon_1"></i><span>{{ user_name }}</span></a>
+                    </li>
+                    <li class="lsm-sidebar-item">
+                        <a href="/home_user/all/"><i class="my-icon lsm-sidebar-icon icon_2"></i><span>home</span><i
+                                class="my-icon lsm-sidebar-more"></i></a>
+                    </li>
+
+                    <li class="lsm-sidebar-item">
+                        <a href="/home_test/"><i
+                                class="my-icon lsm-sidebar-icon icon-users"></i><span>examination</span><i
+                                class="my-icon lsm-sidebar-more"></i></a>
+                    </li>
+                    <li class="lsm-sidebar-item">
+                        <a href="/logout/"><i class="my-icon lsm-sidebar-icon icon_3"></i><span>logout</span><i
+                                class="my-icon lsm-sidebar-more"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div style="float:left;margin-left:150px;margin-top:50px;width:1000px;">
+    <h1>{{ topic.problem }}</h1>
+    <div>
+        answer：
+        {% if topic.answer == "1" %}
+            {{ topic.answer1 }}
+        {% else %}
+            {{ topic.answer2 }}
+        {% endif %}
+        <span></span>
+    </div>
+    <div>
+        Introduction to Knowledge Points：
+        <span>{{ topic.content }}</span>
+    </div>
+    <div>
+        Your Answer：
+        <span>{{ result }}</span>
+    </div>
+
+</div>
+
+</body>
+<script src="{% static 'js/jj.js' %}"></script>
+</html>
+
+<style>
+    .lineOverflow {
+        width: 180px;
+        text-overflow: ellipsis;
+        white-space: nowrap;/*Disable automatic line wrapping*/
+        overflow: hidden;
+    }
+.lsm-sidebar-item a {
+    color: #333333;/* Dark gray, improves readability */
+    font-weight: bold; /* Make the text more eye-catching */
+    text-decoration: none; /* Remove underscores */
+}
+
+body {
+    background-image: url("{% static 'images/study.png' %}");/* Make sure the background image path is correct */
+    background-size: cover;  /* Make the image fill the entire page */
+    background-position: center;  /* Center the image */
+    background-attachment: fixed; /* The background is fixed and does not scroll with the page */
+    background-repeat: no-repeat; /* Prevent image duplication */
+}
+
+</style>
